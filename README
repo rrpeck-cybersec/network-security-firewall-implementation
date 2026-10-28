@@ -1,0 +1,177 @@
+# Network Security & Firewall Implementation
+
+## Project Overview
+
+This project focused on designing a secure network and implementing a firewall within a virtual lab environment.
+
+The work included creating a network topology, configuring an OPNsense firewall, reviewing endpoint network settings, and implementing firewall rules to control traffic between systems.
+
+The project reinforced the importance of layered network security, firewall placement, segmentation, access control, and properly configured internal network communication.
+
+## Objectives
+
+- Design a secure network topology.
+- Identify the role of key network infrastructure components.
+- Configure an OPNsense firewall.
+- Review LAN and WAN firewall interfaces.
+- Configure and verify endpoint network settings.
+- Implement firewall rules for internal traffic control.
+- Understand the importance of default-deny behavior.
+- Apply layered security concepts to network architecture.
+
+## Tools & Technologies
+
+- OPNsense
+- Proxmox
+- Windows 10
+- Virtual Machines
+- IPv4 networking
+- DHCP
+- Static IP configuration
+- Firewall rules
+- Network segmentation concepts
+- Router
+- Switch
+- Load balancer
+- Web server
+- Database server
+- diagrams.net / draw.io
+
+## Secure Network Design
+
+The first stage of the project involved building a network topology that included the major components needed for a basic secure network.
+
+The design included:
+
+- Internet connection
+- Router
+- Firewall
+- Switch
+- Load balancer
+- Web server
+- Database server
+
+![Secure Network Topology](screenshots/01-secure-network-topology.png)
+
+*Secure network topology illustrating layered traffic flow through the router, firewall, switch, load balancer, web server, and database server.*
+
+The topology was designed to create a clear flow of traffic while placing the firewall between external traffic and internal network resources.
+
+This helped demonstrate the importance of controlling traffic before it reaches sensitive systems.
+
+## OPNsense Firewall Configuration
+
+The firewall was configured using OPNsense within the virtual environment.
+
+After configuration, the firewall console displayed active LAN and WAN interfaces and started the DHCPv4 service.
+
+![OPNsense Firewall Configuration](screenshots/02-opnsense-firewall-configured.png)
+
+*OPNsense firewall console after configuration, showing LAN and WAN interfaces, DHCP service, and the web-management address.*
+
+The LAN interface was used for communication with internal systems, while the WAN interface represented the external network side of the firewall.
+
+## Windows 10 Network Configuration
+
+A Windows 10 virtual machine was configured as part of the internal network.
+
+The system's network configuration was reviewed to verify connectivity information such as:
+
+- IPv4 address
+- Subnet mask
+- Default gateway
+- DHCP server
+- DNS server
+- Network adapter information
+
+![Windows 10 Network Configuration](screenshots/03-windows10-network-config.png)
+
+*Windows 10 VM network configuration showing the assigned IPv4 address, subnet mask, default gateway, DHCP information, and DNS settings.*
+
+Verifying endpoint network settings is important when troubleshooting connectivity or confirming that devices are communicating through the intended network path.
+
+## Firewall Rule Configuration
+
+Firewall rules were configured through the OPNsense web interface.
+
+The rules controlled which traffic was permitted or denied on the LAN interface.
+
+![OPNsense LAN Firewall Rules](screenshots/04-opnsense-lan-firewall-rules.png)
+
+*OPNsense LAN firewall rules showing explicit traffic control, default-deny behavior, and rule ordering for internal network access.*
+
+The configuration demonstrated several important firewall concepts:
+
+- Explicit allow rules
+- Default deny behavior
+- Source and destination filtering
+- Rule ordering
+- Internal network traffic control
+
+Because firewall rules are evaluated in sequence, rule placement can directly affect whether traffic is allowed or blocked.
+
+## Firewall Placement
+
+The lab reinforced that a firewall is commonly placed between trusted internal systems and untrusted external networks.
+
+This placement allows the firewall to inspect and control inbound and outbound traffic before that traffic reaches internal systems.
+
+Additional internal firewalls can also be used between network segments or sensitive systems to reduce lateral movement if a compromise occurs.
+
+## Software Firewalls and Microsegmentation
+
+Modern environments increasingly use software-based firewalls and microsegmentation in addition to traditional perimeter firewalls.
+
+Software firewalls can be deployed directly on:
+
+- Servers
+- Virtual machines
+- Endpoints
+- Cloud workloads
+
+Microsegmentation divides a network into smaller, isolated sections that can have their own security policies.
+
+This provides more granular access control and can reduce the attack surface by preventing unrestricted communication between systems.
+
+## Security Lessons
+
+This project reinforced several important network-security principles:
+
+- Firewalls should be placed where they can control traffic between trusted and untrusted environments.
+- Internal segmentation can reduce lateral movement.
+- Network devices should be configured intentionally rather than relying only on default settings.
+- Firewall rules should follow least-privilege principles.
+- Default-deny behavior provides stronger security than allowing unnecessary traffic.
+- Endpoint addressing and gateway settings must align with the network design.
+- Network security works best as a layered architecture rather than a single defensive control.
+
+## Key Takeaways
+
+The project demonstrated how network design and firewall configuration work together.
+
+A secure topology provides the structure, while the firewall enforces traffic-control decisions between systems and network boundaries.
+
+The lab also showed that modern security architecture increasingly combines perimeter controls with internal segmentation, endpoint controls, and software-based security technologies.
+
+## Skills Demonstrated
+
+- Network security
+- Secure network design
+- OPNsense administration
+- Firewall configuration
+- Firewall rule management
+- IPv4 networking
+- DHCP concepts
+- Endpoint network configuration
+- Network segmentation concepts
+- Traffic filtering
+- Default-deny security
+- Virtual machine networking
+- Technical troubleshooting
+- Security documentation
+
+## Lab Disclaimer
+
+This project was completed in an authorized educational virtual lab environment.
+
+All systems, IP addresses, firewall rules, and configurations shown were created for training and coursework purposes.
